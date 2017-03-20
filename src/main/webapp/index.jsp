@@ -15,16 +15,16 @@
 		<input type="number" name="POINT_MAX" placeholder="Valeur minimum de points"/>
 		<input type="submit" value="Filtrer"/>
 	</form>
-	<c:forEach var="article" items="${articles}">
+	<c:forEach var="transaction" items="${transactions}">
 		<hr>
-		<h2>${article.designation}</a> (${article.categorie.nom})
+		<h2>${transaction.designation}</a> (${transaction.categorie.nom})
 		</h2>
-		<a href="detailArticle?ID_ARTICLE=${article.idArticle}">Détails sur l'article</a>
+		<a href="detailArticle?ID_ARTICLE=${transaction.idArticle}">Détails sur l'transaction</a>
 		<hr>
 	</c:forEach>
 	<br>
 	<br>
-	<p>Nombre total d'article(s): ${articles.size()}</p>
+	<p>Nombre total d'transaction(s): ${transactions.size()}</p>
 
 	<a href="/inscription">S'inscrire</a>
 	<a href="/connexion">Se connecter</a>

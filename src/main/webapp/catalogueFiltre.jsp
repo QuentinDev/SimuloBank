@@ -10,11 +10,11 @@
 <head>
     <title>Catalogue filtré</title>
 
-    <c:forEach var="article" items="${articles}">
+    <c:forEach var="transaction" items="${transactions}">
         <hr>
-        <h2>${article.designation}</a> (${article.categorie.nom})
+        <h2>${transaction.designation}</a> (${transaction.categorie.nom})
         </h2>
-        <a href="detailArticle?ID_ARTICLE=${article.idArticle}">Détails sur l'article</a>
+        <a href="detailArticle?ID_ARTICLE=${transaction.idArticle}">Détails sur l'transaction</a>
         <hr>
     </c:forEach>
 </head>

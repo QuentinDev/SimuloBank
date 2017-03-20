@@ -2,11 +2,11 @@ package fr.instic.cadeaux.service.impl;
 
 import java.util.List;
 
+import fr.instic.cadeaux.business.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.instic.cadeaux.business.Article;
 import fr.instic.cadeaux.dao.ArticleDao;
 import fr.instic.cadeaux.service.ArticleService;
 
@@ -18,19 +18,19 @@ public class ArticleServiceImpl implements ArticleService {
 	
 	@Transactional(readOnly=true)
 	@Override
-	public List<Article> recupereArticles() {
+	public List<Transaction> recupereArticles() {
 		return articleDao.findAll();
 	}
 
 	@Transactional(readOnly = true)
 	@Override
-	public Article recupereArticleById(int id) {
+	public Transaction recupereArticleById(int id) {
 		return articleDao.findById(id);
 	}
 
 	@Transactional(readOnly = true)
 	@Override
-	public List<Article> recupereArticleParPoints(int minPoints, int maxPoints) {
+	public List<Transaction> recupereArticleParPoints(int minPoints, int maxPoints) {
 		return articleDao.findByPoint(minPoints, maxPoints);
 	}
 

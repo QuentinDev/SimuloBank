@@ -6,7 +6,7 @@ import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
-public class Article {
+public class Transaction {
 
 	private static final float TAUX_TVA = 0.2f;
 	@Id
@@ -42,7 +42,7 @@ public class Article {
 
 
 	@OneToMany(mappedBy = "article")
-	private List<Command> commands;
+	private List<Account> accounts;
 
 	private String urlImage;
 
@@ -86,12 +86,12 @@ public class Article {
 		this.categorie = categorie;
 	}
 
-	public List<Command> getCommands() {
-		return commands;
+	public List<Account> getAccounts() {
+		return accounts;
 	}
 
-	public void setCommands(List<Command> commands) {
-		this.commands = commands;
+	public void setAccounts(List<Account> accounts) {
+		this.accounts = accounts;
 	}
 
 	public String getUrlImage() {
@@ -104,7 +104,7 @@ public class Article {
 
     @Override
     public String toString() {
-        return "Article{" +
+        return "Transaction{" +
                 "idArticle=" + idArticle +
                 ", designation='" + designation + '\'' +
                 ", description='" + description + '\'' +
@@ -112,7 +112,7 @@ public class Article {
                 ", stock=" + stock +
                 ", categorie=" + categorie +
                 ", montantHT=" + montantHT +
-                ", commands=" + commands +
+                ", accounts=" + accounts +
                 ", urlImage='" + urlImage + '\'' +
                 '}';
     }

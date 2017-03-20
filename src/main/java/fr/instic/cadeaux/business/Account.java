@@ -7,7 +7,7 @@ import java.util.Date;
  * Created by Quentin on 08/02/2017.
  */
 @Entity
-public class Command {
+public class Account {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,9 +17,9 @@ public class Command {
     private User user;
 
     @ManyToOne
-    private Article article;
+    private Transaction transaction;
 
-    private int quantity;
+    private int balance;
 
     private Date date;
 
@@ -39,20 +39,20 @@ public class Command {
         this.user = user;
     }
 
-    public Article getArticle() {
-        return article;
+    public Transaction getTransaction() {
+        return transaction;
     }
 
-    public void setArticle(Article article) {
-        this.article = article;
+    public void setTransaction(Transaction transaction) {
+        this.transaction = transaction;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getBalance() {
+        return balance;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
 
     public Date getDate() {
@@ -65,11 +65,11 @@ public class Command {
 
     @Override
     public String toString() {
-        return "Command{" +
+        return "Account{" +
                 "id=" + id +
                 ", user=" + user +
-                ", article=" + article +
-                ", quantity=" + quantity +
+                ", transaction=" + transaction +
+                ", balance=" + balance +
                 ", date=" + date +
                 '}';
     }

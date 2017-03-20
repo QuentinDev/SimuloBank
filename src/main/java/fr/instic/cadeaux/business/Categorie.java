@@ -18,7 +18,7 @@ public class Categorie {
 	private String nom;
 
 	@OneToMany(mappedBy="categorie")
-	private List<Article> articles;
+	private List<Transaction> transactions;
 
 
 	public Categorie() {
@@ -45,12 +45,12 @@ public class Categorie {
 		this.nom = nom;
 	}
 
-	public List<Article> getArticles() {
-		return articles;
+	public List<Transaction> getTransactions() {
+		return transactions;
 	}
 
-	public void setArticles(List<Article> articles) {
-		this.articles = articles;
+	public void setTransactions(List<Transaction> transactions) {
+		this.transactions = transactions;
 	}
 
 	@Override

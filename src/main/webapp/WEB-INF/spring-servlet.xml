@@ -29,10 +29,10 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="annotatedClasses">
 			<list>
-				<value>fr.instic.cadeaux.business.Article</value>
+				<value>fr.instic.cadeaux.business.Transaction</value>
 				<value>fr.instic.cadeaux.business.Categorie</value>
 				<value>fr.instic.cadeaux.business.User</value>
-				<value>fr.instic.cadeaux.business.Command</value>
+				<value>fr.instic.cadeaux.business.Account</value>
 				<value>fr.instic.cadeaux.business.City</value>
 			</list>
 		</property>

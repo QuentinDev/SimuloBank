@@ -2,15 +2,15 @@ package fr.instic.cadeaux.service;
 
 import java.util.List;
 
-import fr.instic.cadeaux.business.Article;
+import fr.instic.cadeaux.business.Transaction;
 import org.springframework.transaction.annotation.Transactional;
 
 public interface ArticleService {
 
-	List<Article> recupereArticles();
+	List<Transaction> recupereArticles();
 
-	Article recupereArticleById(int id);
+	Transaction recupereArticleById(int id);
 
 	@Transactional(readOnly = true)
-	List<Article> recupereArticleParPoints(int minPoints, int maxPoints);
+	List<Transaction> recupereArticleParPoints(int minPoints, int maxPoints);
 }

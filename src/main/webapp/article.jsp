@@ -5,14 +5,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>${article.designation}</title>
+<title>${transaction.designation}</title>
 </head>
 <body>
-	<h1>Détail sur l'article ${article.designation}</h1>
+	<h1>Détail sur l'transaction ${transaction.designation}</h1>
 	<br>
-	Description: ${article.description}<br>
-	Stock disponibe: ${article.stock}<br>
-	Nombre de points requis: ${article.nbPoints}<br>
+	Description: ${transaction.description}<br>
+	Stock disponibe: ${transaction.stock}<br>
+	Nombre de points requis: ${transaction.nbPoints}<br>
 
 	<a href="/">Retour</a>
 

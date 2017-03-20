@@ -2,10 +2,10 @@ package fr.instic.cadeaux.dao;
 
 import java.util.List;
 
-import fr.instic.cadeaux.business.Article;
+import fr.instic.cadeaux.business.Transaction;
 
 public interface ArticleDao {
-	List<Article> findAll();
-	Article findById(int id);
-	List<Article> findByPoint(int minPoints, int maxPoints);
+	List<Transaction> findAll();
+	Transaction findById(int id);
+	List<Transaction> findByPoint(int minPoints, int maxPoints);
 	}
