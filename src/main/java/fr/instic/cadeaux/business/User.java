@@ -16,7 +16,7 @@ public class User {
 
     private String firstname;
 
-    private String prenom;
+    private String name;
 
     private int balance;
 
@@ -37,9 +37,9 @@ public class User {
         super();
     }
 
-    public User(String firstname, String prenom, String email, String password, City city) {
+    public User(String firstname, String name, String email, String password, City city) {
         this.firstname = firstname;
-        this.prenom = prenom;
+        this.name = name;
         this.email = email;
         this.password = password;
         this.city = city;
@@ -54,12 +54,12 @@ public class User {
         this.id = id;
     }
 
-    public String getPrenom() {
-        return prenom;
+    public String getName() {
+        return name;
     }
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getFirstname() {
@@ -115,7 +115,7 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", firstname='" + firstname + '\'' +
-                ", prenom='" + prenom + '\'' +
+                ", name='" + name + '\'' +
                 ", balance=" + balance +
                 ", commands=" + commands +
                 ", email='" + email + '\'' +

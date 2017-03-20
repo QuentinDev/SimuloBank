@@ -47,7 +47,7 @@ public class UsersController {
     ) {
         System.out.println("Lancement inscriptionPost");
         City city = cs.getCityById(cityId);
-        User user = us.ajouterUtilisateur(new User(nom, prenom, email, motDePasse, city));
+        User user = us.ajouterUtilisateur(new User(prenom, nom, email, motDePasse, city));
         ModelAndView mav = new ModelAndView("inscriptionPost");
         mav.getModel().put("user", user);
 
