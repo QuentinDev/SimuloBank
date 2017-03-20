@@ -24,7 +24,7 @@ public class User {
     private City city;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-    List<Command> commands;
+    private List<Account> accounts;
 
     @Column(unique = true)
     @Email
@@ -86,12 +86,12 @@ public class User {
         this.email = email;
     }
 
-    public List<Command> getCommands() {
-        return commands;
+    public List<Account> getAccounts() {
+        return accounts;
     }
 
-    public void setCommands(List<Command> commands) {
-        this.commands = commands;
+    public void setAccounts(List<Account> accounts) {
+        this.accounts = accounts;
     }
 
     public String getPassword() {
@@ -117,7 +117,7 @@ public class User {
                 ", firstname='" + firstname + '\'' +
                 ", name='" + name + '\'' +
                 ", balance=" + balance +
-                ", commands=" + commands +
+                ", accounts=" + accounts +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", city='" + city + '\'' +
