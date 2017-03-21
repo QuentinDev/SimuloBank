@@ -1,10 +1,12 @@
 package fr.instic.cadeaux.service.impl;
 
 import fr.instic.cadeaux.business.Account;
+import fr.instic.cadeaux.business.Article;
 import fr.instic.cadeaux.dao.AccountDao;
 import fr.instic.cadeaux.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -25,7 +27,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Transactional(readOnly = true)
     @Override
-    public Article getAccountById(int id) {
+    public Account getAccountById(int id) {
         return accountDao.findById(id);
     }
 }
