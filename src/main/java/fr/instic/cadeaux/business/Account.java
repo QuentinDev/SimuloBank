@@ -114,5 +114,26 @@ public class Account {
                 '}';
     }
 
-    
+    public List<MontantDate> calculBudget(Date date)
+    {   float balancetemp=this.balance;
+        Date now=new Date();
+        List<MontantDate> montantDateList = null;
+
+        while (now.compareTo(date) == -1){
+            int i=0;
+            for (Transaction transaction: this.transactions )
+            {
+                balancetemp=balancetemp+transaction.montantDate(now);
+                
+            }
+
+          montantDateList.add(new MontantDate(now,balancetemp));
+            now.setDate(now.getDate()+1);
+        }
+
+        return montantDateList;
+
+    }
+
+
 }
