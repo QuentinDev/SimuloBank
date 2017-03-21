@@ -76,21 +76,29 @@ public class Transaction
     }
 
 
-    public float montantDate(Date date)
-    {
+    public float montantDate(Date date)  {
         LocalDate  a = LocalDate.of(this.date.getYear(), this.date.getMonth(), this.date.getDay());
         LocalDate  b = LocalDate.of(date.getYear() , date.getMonth(), date.getDay());
         switch (this.type.getId())
         {
-            case 1:  if(a==b)return amount; // transaction unique
-                        else return 0 ;
+            case 1:
+                if(a==b)
+                    return amount; // transaction unique
+
                 break;
-            case 2:   if(a.getDayOfMonth()==b.getDayOfMonth())return amount; // transaction mesuel
-                        else return 0 ;
+            case 2:
+                if(a.getDayOfMonth()==b.getDayOfMonth())
+                    return amount; // transaction mesuel
+
                 break;
-            case 3:  if(a.getDayOfMonth()==b.getDayOfMonth()&& a.getMonthValue()==b.getMonthValue())return amount; // transaction annuel
+            case 3:
+                if(a.getDayOfMonth()==b.getDayOfMonth()&& a.getMonthValue()==b.getMonthValue())
+                    return amount; // transaction annuel;
                 break;
-            default: return 0;
+            default:
+                return 0;
         }
+        return 0;
     }
+
 }
