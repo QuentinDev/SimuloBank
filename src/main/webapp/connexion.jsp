@@ -8,7 +8,7 @@
 <title>Inscription</title>
 </head>
 <body>
-	<h1>Inscription</h1>
+	<h1>Connexion</h1>
 	<br>
 	<form action="/connexion" method="post">
 		<div>

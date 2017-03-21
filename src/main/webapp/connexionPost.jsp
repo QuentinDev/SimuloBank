@@ -5,12 +5,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Connexion réussi</title>
+<title>Connexion réussie</title>
 </head>
 <body>
-	<h1>Connexion réussi</h1>
-	<br>
-	<pre>${user}</pre>
+	<h1>Connexion réussie <br>
+	Bienvenue ${user.firstname} ${user.name}</h1>
 	<br>
 
 	<a href="/">Retour</a>
