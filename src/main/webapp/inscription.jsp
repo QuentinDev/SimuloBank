@@ -13,22 +13,22 @@
 	<form action="/inscription" method="post">
 		<div>
 			<label for="NOM">Nom</label>
-			<input accountType="text" id="NOM" name="NOM">
+			<input type="text" id="NOM" name="NOM">
 		</div>
 
 		<div>
 			<label for="PRENOM">Prenom</label>
-			<input accountType="text" id="PRENOM" name="PRENOM">
+			<input type="text" id="PRENOM" name="PRENOM">
 		</div>
 
 		<div>
 			<label for="EMAIL">Email</label>
-			<input accountType="email" id="EMAIL" name="EMAIL">
+			<input type="email" id="EMAIL" name="EMAIL">
 		</div>
 
 		<div>
 			<label for="MOT_DE_PASSE">Mot de passe</label>
-			<input accountType="password" id="MOT_DE_PASSE" name="MOT_DE_PASSE">
+			<input type="password" id="MOT_DE_PASSE" name="MOT_DE_PASSE">
 		</div>
 		<select name="CITY">
 

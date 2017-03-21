@@ -13,16 +13,16 @@
 	<form action="/connexion" method="post">
 		<div>
 			<label for="email">Email</label>
-			<input accountType="email" id="email" name="email">
+			<input type="email" id="email" name="email">
 		</div>
 
 		<div>
 			<label for="password">Mot de passe</label>
-			<input accountType="password" id="password" name="password">
+			<input type="password" id="password" name="password">
 		</div>
 
 		<div>
-			<input accountType="submit" value="Se connecter">
+			<input type="submit" value="Se connecter">
 		</div>
 	</form>
 	<br>

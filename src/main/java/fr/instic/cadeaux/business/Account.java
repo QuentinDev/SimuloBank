@@ -111,6 +111,7 @@ public class Account {
                 ", transactions='" + transactions + '\'' +
                 ", balance=" + balance +
                 ", creationDate=" + creationDate +
+                ", rate=" + rate +
                 '}';
     }
 
