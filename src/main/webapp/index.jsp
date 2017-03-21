@@ -11,9 +11,9 @@
 	<h1>Liste des Articles</h1>
 	<br>
 	<form action="catalogueFiltre" method="get">
-		<input type="number" name="POINT_MIN" placeholder="Valeur minimum de points"/>
-		<input type="number" name="POINT_MAX" placeholder="Valeur minimum de points"/>
-		<input type="submit" value="Filtrer"/>
+		<input accountType="number" name="POINT_MIN" placeholder="Valeur minimum de points"/>
+		<input accountType="number" name="POINT_MAX" placeholder="Valeur minimum de points"/>
+		<input accountType="submit" value="Filtrer"/>
 	</form>
 	<c:forEach var="article" items="${articles}">
 		<hr>

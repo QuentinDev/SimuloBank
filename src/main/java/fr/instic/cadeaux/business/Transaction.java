@@ -21,9 +21,12 @@ public class Transaction {
 
     private float amount;
 
+    @ManyToOne
+    private TransactionType transactionType;
+
     public int getId() {
         return id;
-    }k
+    }
 
     public void setId(int id) {
         this.id = id;

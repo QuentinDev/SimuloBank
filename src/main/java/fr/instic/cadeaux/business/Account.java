@@ -24,7 +24,7 @@ public class Account {
     private float balance;
 
     @ManyToOne
-    private Type type;
+    private AccountType accountType;
 
     private Date creationDate;
 
@@ -68,12 +68,12 @@ public class Account {
         this.balance = balance;
     }
 
-    public Type getType() {
-        return type;
+    public AccountType getAccountType() {
+        return accountType;
     }
 
-    public void setType(Type type) {
-        this.type = type;
+    public void setAccountType(AccountType accountType) {
+        this.accountType = accountType;
     }
 
     public Date getCreationDate() {
@@ -89,7 +89,7 @@ public class Account {
         return "Article{" +
                 "id=" + id +
                 ", user='" + user + '\'' +
-                ", type='" + type + '\'' +
+                ", accountType='" + accountType + '\'' +
                 ", transactions='" + transactions + '\'' +
                 ", balance=" + balance +
                 ", creationDate=" + creationDate +
