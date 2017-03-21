@@ -8,9 +8,8 @@
 <title>Inscription réussi</title>
 </head>
 <body>
-	<h1>Inscription réussi</h1>
-	<br>
-	<pre>${user}</pre>
+	<h1>Inscription réussi <br>
+	Bienvenue ${user.firstname} ${user.name}</h1>
 	<br>
 
 	<a href="/">Retour</a>
