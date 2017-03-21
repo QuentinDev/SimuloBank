@@ -23,6 +23,8 @@ public class Account {
 
     private float balance;
 
+    private int rate;
+
     @ManyToOne
     private AccountType accountType;
 
@@ -82,6 +84,22 @@ public class Account {
 
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+
+    public int getRate() {
+        return rate;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
     }
 
     @Override
