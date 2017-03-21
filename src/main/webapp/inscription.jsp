@@ -39,7 +39,7 @@
 
         </select>
 		<div>
-			<input accountType="submit" value="S'inscrire">
+			<input type="submit" value="S'inscrire">
 		</div>
 	</form>
 	<br>

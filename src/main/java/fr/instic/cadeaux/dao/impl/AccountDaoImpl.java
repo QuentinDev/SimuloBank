@@ -19,12 +19,11 @@ public class AccountDaoImpl implements AccountDao {
 
     @Override
     public List<Account> findAll() {
-        return sf.getCurrentSession().createQuery("from Article").getResultList();
+        return sf.getCurrentSession().createQuery("from Account").getResultList();
     }
 
     @Override
     public Account findById(int id) {
         return sf.getCurrentSession().byId(Account.class).load(id);
     }
-
 }
