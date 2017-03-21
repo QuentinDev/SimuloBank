@@ -1,6 +1,7 @@
 package fr.instic.cadeaux.business;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by Quentin on 20/03/2017.
@@ -16,11 +17,13 @@ public class Transaction {
 
     private String libelle;
 
+    private Date date;
+
     private float amount;
 
     public int getId() {
         return id;
-    }
+    }k
 
     public void setId(int id) {
         this.id = id;
@@ -40,6 +43,14 @@ public class Transaction {
 
     public void setLibelle(String libelle) {
         this.libelle = libelle;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public float getAmount() {
