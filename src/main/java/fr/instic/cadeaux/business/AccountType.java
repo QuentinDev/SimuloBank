@@ -1,15 +1,12 @@
 package fr.instic.cadeaux.business;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
- * Created by Quentin on 21/03/2017.
+ * Created by Quentin on 20/03/2017.
  */
 @Entity
-public class TransactionType {
+public class AccountType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

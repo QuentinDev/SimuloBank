@@ -36,7 +36,8 @@
 				<value>fr.instic.cadeaux.business.City</value>
 				<value>fr.instic.cadeaux.business.Account</value>
 				<value>fr.instic.cadeaux.business.Transaction</value>
-				<value>fr.instic.cadeaux.business.Type</value>
+				<value>fr.instic.cadeaux.business.AccountType</value>
+				<value>fr.instic.cadeaux.business.TransactionType</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

@@ -20,14 +20,12 @@ public class Transaction
 
     private float amount;
 
-    @OneToMany
-    private TransactionType type;
-
-
+    @ManyToOne
+    private TransactionType transactionType;
 
     public int getId() {
         return id;
-    };
+    }
 
     public void setId(int id) {
         this.id = id;

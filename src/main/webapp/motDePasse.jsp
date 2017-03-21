@@ -16,16 +16,16 @@
     <form action="/passwordReset" method="post">
         <div>
             <label for="email">Email</label>
-            <input type="email" id="email" name="email">
+            <input accountType="email" id="email" name="email">
         </div>
 
         <div>
             <label for="password">Mot de passe</label>
-            <input type="password" id="password" name="password">
+            <input accountType="password" id="password" name="password">
         </div>
 
         <div>
-            <input type="submit" value="Changer le mot de passe">
+            <input accountType="submit" value="Changer le mot de passe">
         </div>
     </form>
     <br>

@@ -23,8 +23,10 @@ public class Account {
 
     private float balance;
 
+    private int rate;
+
     @ManyToOne
-    private Type type;
+    private AccountType accountType;
 
     private Date creationDate;
 
@@ -68,12 +70,12 @@ public class Account {
         this.balance = balance;
     }
 
-    public Type getType() {
-        return type;
+    public AccountType getAccountType() {
+        return accountType;
     }
 
-    public void setType(Type type) {
-        this.type = type;
+    public void setAccountType(AccountType accountType) {
+        this.accountType = accountType;
     }
 
     public Date getCreationDate() {
@@ -84,12 +86,28 @@ public class Account {
         this.creationDate = creationDate;
     }
 
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+
+    public int getRate() {
+        return rate;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
+    }
+
     @Override
     public String toString() {
         return "Article{" +
                 "id=" + id +
                 ", user='" + user + '\'' +
-                ", type='" + type + '\'' +
+                ", accountType='" + accountType + '\'' +
                 ", transactions='" + transactions + '\'' +
                 ", balance=" + balance +
                 ", creationDate=" + creationDate +
