@@ -2,12 +2,11 @@ package fr.instic.cadeaux.business;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.time.LocalDate;
 
-/**
- * Created by Quentin on 20/03/2017.
- */
 @Entity
-public class Transaction {
+public class Transaction
+{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -21,9 +20,14 @@ public class Transaction {
 
     private float amount;
 
+    @OneToMany
+    private TransactionType type;
+
+
+
     public int getId() {
         return id;
-    }k
+    };
 
     public void setId(int id) {
         this.id = id;
@@ -69,5 +73,24 @@ public class Transaction {
                 ", libelle='" + libelle + '\'' +
                 ", amount='" + amount + '\'' +
                 '}';
+    }
+
+
+    public float montantDate(Date date)
+    {
+        LocalDate  a = LocalDate.of(this.date.getYear(), this.date.getMonth(), this.date.getDay());
+        LocalDate  b = LocalDate.of(date.getYear() , date.getMonth(), date.getDay());
+        switch (this.type.getId())
+        {
+            case 1:  if(a==b)return amount; // transaction unique
+                        else return 0 ;
+                break;
+            case 2:   if(a.getDayOfMonth()==b.getDayOfMonth())return amount; // transaction mesuel
+                        else return 0 ;
+                break;
+            case 3:  if(a.getDayOfMonth()==b.getDayOfMonth()&& a.getMonthValue()==b.getMonthValue())return amount; // transaction annuel
+                break;
+            default: return 0;
+        }
     }
 }
