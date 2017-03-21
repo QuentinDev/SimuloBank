@@ -86,12 +86,12 @@ public class Transaction
                 break;
             case 2:
                 if(a.getDayOfMonth()==b.getDayOfMonth())
-                    return amount; // transaction mesuel
+                    return amount; // transaction mensuelle
 
                 break;
             case 3:
                 if(a.getDayOfMonth()==b.getDayOfMonth()&& a.getMonthValue()==b.getMonthValue())
-                    return amount; // transaction annuel;
+                    return amount; // transaction annuelle;
                 break;
             default:
                 return 0;

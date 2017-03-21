@@ -1,0 +1,27 @@
+
+body{
+    width:30%;
+    height:auto;
+    margin:auto;
+    padding:20px;
+    margin-top:20px;
+    box-shadow:0px 0px 12px grey;
+}
+h1{
+    text-align:center;
+}
+form label
+{
+    display:inline-block;
+    width:100px;
+}
+form #submit,form a
+{
+    text-align:center;
+}
+body a
+{
+    width: 80px;
+    display: block;
+    margin:auto;
+}
