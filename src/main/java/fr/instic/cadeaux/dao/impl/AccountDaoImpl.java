@@ -1,6 +1,7 @@
 package fr.instic.cadeaux.dao.impl;
 
 import fr.instic.cadeaux.business.Account;
+import fr.instic.cadeaux.business.AccountType;
 import fr.instic.cadeaux.dao.AccountDao;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,4 +34,16 @@ public class AccountDaoImpl implements AccountDao {
                 .setParameter("userId", userId)
                 .getResultList();
     }
+
+    @Override
+    public List<AccountType> getAccountTypes() {
+        return sf.getCurrentSession().createQuery("from AccountType", AccountType.class).getResultList();
+    }
+
+    @Override
+    public Account addAccount(Account account) {
+        sf.getCurrentSession().save(account);
+        return account;
+    }
+
 }

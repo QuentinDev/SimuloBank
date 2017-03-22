@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Quentin
@@ -11,6 +12,80 @@
     <title>Liste des comptes</title>
 </head>
 <body>
-<pre>${accounts}</pre>
+<c:forEach var="account" items="${accounts}">
+    <p>${account.name} : ${account.balance}€</p>
+    <br>
+    <c:forEach var="transaction" items="${account.transactions}">
+        <p>${transaction.amount} / ${transaction.libelle} / ${transaction.date} / ${transaction.transactionType.name}</p>
+    </c:forEach>
+    <c:if test="${account.transactions.size() == 0}">
+        <p>Aucune transaction disponible.</p>
+    </c:if>
+    <p>Rajouter une transaction :</p>
+    <form action="/createTransaction" method="post">
+        <div>
+            <input type="hidden" id="account_id" name="account_id" value="${account.id}">
+        </div>
+
+        <div>
+            <label for="NOM">Nom de la transaction</label>
+            <input required type="text" id="NOM" name="NOM">
+        </div>
+
+        <div>
+            <label for="AMOUNT">Montant de la transaction</label>
+            <input required type="number" id="AMOUNT" name="AMOUNT">
+        </div>
+
+        <div>
+            <label for="DATE">Date de la transaction</label>
+            <input required type="date" id="DATE" name="DATE">
+        </div>
+
+        <label for="TRANSACTIONTYPES">Type de la transaction</label>
+        <select name="TRANSACTIONTYPES">
+            <c:forEach var="type" items="${transactionTypes}">
+                <option id="${type.name}" value="${type.id}">${type.name}</option>
+                <label for="${type.name}">${type.name}</label>
+            </c:forEach>
+        </select>
+
+        <div id="submit">
+            <input Type="submit" value="S'inscrire">
+        </div>
+    </form>
+    <hr>
+</c:forEach>
+
+
+<p>Créer un compte :</p>
+<form action="/createAccount" method="post">
+    <div>
+        <input type="hidden" id="USER_ID" name="USER_ID" value="${user.id}">
+    </div>
+    <div>
+        <label for="NAME">Nom de compte</label>
+        <input required type="text" id="NAME" name="NAME">
+    </div>
+
+    <div>
+        <label for="BALANCE">Solde de départ (en €)</label>
+        <input required type="text" id="BALANCE" name="BALANCE">
+    </div>
+
+    <label for="ACCOUNTTYPE">Type du compte</label>
+    <select name="ACCOUNTTYPE">
+        <c:forEach var="type" items="${accountTypes}">
+            <option id="${type.name}" value="${type.id}">${type.name}</option>
+            <label for="${type.name}">${type.name}</label>
+        </c:forEach>
+    </select>
+
+    <div id="submit">
+        <input Type="submit" value="S'inscrire">
+    </div>
+</form>
+
+
 </body>
 </html>

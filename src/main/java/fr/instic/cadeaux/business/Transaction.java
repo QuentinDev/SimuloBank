@@ -3,6 +3,7 @@ package fr.instic.cadeaux.business;
 import javax.persistence.*;
 import java.util.Date;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class Transaction
@@ -63,12 +64,21 @@ public class Transaction
         this.amount = amount;
     }
 
+    public TransactionType getTransactionType() {
+        return transactionType;
+    }
+
+    public void setTransactionType(TransactionType transactionType) {
+        this.transactionType = transactionType;
+    }
+
     @Override
     public String toString() {
         return "Transaction{" +
                 "id=" + id +
                 ", libelle='" + libelle + '\'' +
                 ", amount='" + amount + '\'' +
+                ", transactionType='" + transactionType + '\'' +
                 '}';
     }
 

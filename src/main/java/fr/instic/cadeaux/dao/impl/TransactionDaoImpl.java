@@ -1,6 +1,7 @@
 package fr.instic.cadeaux.dao.impl;
 
 import fr.instic.cadeaux.business.Transaction;
+import fr.instic.cadeaux.business.TransactionType;
 import fr.instic.cadeaux.dao.TransactionDao;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +39,16 @@ public class TransactionDaoImpl implements TransactionDao {
                 .setParameter("date", date)
                 .setParameter("accountId", accountId)
                 .getResultList();
+    }
+
+    @Override
+    public List<TransactionType> getTransactionTypes() {
+        return sf.getCurrentSession().createQuery("from TransactionType", TransactionType.class).getResultList();
+    }
+
+    @Override
+    public Transaction addTransaction(Transaction transaction) {
+        sf.getCurrentSession().save(transaction);
+        return transaction;
     }
 }

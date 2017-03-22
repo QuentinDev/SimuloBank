@@ -1,5 +1,6 @@
 package fr.instic.cadeaux.business;
 
+import javax.jws.soap.SOAPBinding;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -29,6 +30,13 @@ public class Account {
     private AccountType accountType;
 
     private Date creationDate;
+
+    public Account(User user, int balance, String name, int accountType) {
+        this.user = user;
+        this.balance = balance;
+        this.name = name;
+        this.accountType = accountType;
+    }
 
     public int getId() {
         return id;

@@ -1,6 +1,7 @@
 package fr.instic.cadeaux.service;
 
 import fr.instic.cadeaux.business.Transaction;
+import fr.instic.cadeaux.business.TransactionType;
 
 import java.util.Date;
 import java.util.List;
@@ -16,4 +17,8 @@ public interface TransactionService {
     Transaction getTransactionByAccountId(int accountId);
 
     Transaction getTransactionByAccountIdAndByDate(int accountId, Date date);
+
+    List<TransactionType> getTransactionTypes();
+
+    Transaction addTransaction(Transaction transaction);
 }

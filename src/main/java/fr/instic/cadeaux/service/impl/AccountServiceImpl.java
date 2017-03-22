@@ -1,6 +1,7 @@
 package fr.instic.cadeaux.service.impl;
 
 import fr.instic.cadeaux.business.Account;
+import fr.instic.cadeaux.business.AccountType;
 import fr.instic.cadeaux.business.Article;
 import fr.instic.cadeaux.dao.AccountDao;
 import fr.instic.cadeaux.service.AccountService;
@@ -36,4 +37,17 @@ public class AccountServiceImpl implements AccountService {
     public List<Account> getAccountsForUser(int userId) {
         return accountDao.findByUserId(userId);
     }
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<AccountType> getAccountTypes() {
+        return accountDao.getAccountTypes();
+    }
+
+    @Transactional
+    @Override
+    public Account addAccount(Account account) {
+        return accountDao.addAccount(account);
+    }
+
 }

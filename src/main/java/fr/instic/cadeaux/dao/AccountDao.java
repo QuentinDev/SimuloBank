@@ -1,7 +1,7 @@
 package fr.instic.cadeaux.dao;
 
 import fr.instic.cadeaux.business.Account;
-import fr.instic.cadeaux.business.Article;
+import fr.instic.cadeaux.business.AccountType;
 
 import java.util.List;
 
@@ -12,4 +12,6 @@ public interface AccountDao {
     List<Account> findAll();
     Account findById(int id);
     List<Account> findByUserId(int userId);
+    List<AccountType> getAccountTypes();
+    Account addAccount(Account account);
 }
