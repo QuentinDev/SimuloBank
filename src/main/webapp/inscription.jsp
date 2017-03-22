@@ -4,8 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Inscription</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="<c:url value="/resources/CSS/reset.css" />" rel="stylesheet" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="<c:url value="/resources/CSS/index.css" />" rel="stylesheet" />
+	<link href="<c:url value="/resources/CSS/global.css" />" rel="stylesheet" />
+	<title>Inscription</title>
 </head>
 <body>
 	<h1>Inscription</h1>
@@ -38,8 +44,8 @@
             </c:forEach>
 
         </select>
-		<div>
-			<input type="submit" value="S'inscrire">
+		<div id="submit">
+			<input Type="submit" value="S'inscrire">
 		</div>
 	</form>
 	<br>

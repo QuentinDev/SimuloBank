@@ -66,7 +66,7 @@
 		<property name="url"
 			value="jdbc:mysql://localhost:3306/simulobank" />
 		<property name="username" value="root" />
-		<property name="password" value="root" />
+		<property name="password" value="" />
 		<!-- Configuration pool -->
 		<property name="validationQuery" value="SELECT 1" />
 		<property name="validationInterval" value="34000" />
@@ -74,7 +74,6 @@
 		<property name="removeAbandoned" value="true" />
 		<property name="removeAbandonedTimeout" value="55" />
 	</bean>
-
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
