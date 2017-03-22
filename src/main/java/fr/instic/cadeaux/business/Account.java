@@ -18,7 +18,7 @@ public class Account {
     @ManyToOne
     private User user;
 
-    @OneToMany(mappedBy = "account")
+    @OneToMany(mappedBy = "account", fetch = FetchType.EAGER)
     private List<Transaction> transactions;
 
     private float balance;
@@ -104,9 +104,8 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Article{" +
+        return "Account{" +
                 "id=" + id +
-                ", user='" + user + '\'' +
                 ", accountType='" + accountType + '\'' +
                 ", transactions='" + transactions + '\'' +
                 ", balance=" + balance +

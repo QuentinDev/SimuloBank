@@ -26,4 +26,11 @@ public class AccountDaoImpl implements AccountDao {
     public Account findById(int id) {
         return sf.getCurrentSession().byId(Account.class).load(id);
     }
+
+    @Override
+    public List<Account> findByUserId(int userId) {
+        return sf.getCurrentSession().createQuery("from Account where user_id = :userId")
+                .setParameter("userId", userId)
+                .getResultList();
+    }
 }

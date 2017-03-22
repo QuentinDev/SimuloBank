@@ -11,4 +11,5 @@ import java.util.List;
 public interface AccountDao {
     List<Account> findAll();
     Account findById(int id);
+    List<Account> findByUserId(int userId);
 }

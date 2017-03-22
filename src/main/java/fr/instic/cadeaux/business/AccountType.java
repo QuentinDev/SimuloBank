@@ -28,4 +28,12 @@ public class AccountType {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "AccountType{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

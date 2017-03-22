@@ -2,6 +2,7 @@ package fr.instic.cadeaux.service;
 
 import fr.instic.cadeaux.business.Transaction;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -13,4 +14,6 @@ public interface TransactionService {
     Transaction getTransactionById(int id);
 
     Transaction getTransactionByAccountId(int accountId);
+
+    Transaction getTransactionByAccountIdAndByDate(int accountId, Date date);
 }

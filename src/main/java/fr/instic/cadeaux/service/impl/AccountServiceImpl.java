@@ -19,7 +19,7 @@ public class AccountServiceImpl implements AccountService {
     @Autowired
     private AccountDao accountDao;
 
-    @Transactional(readOnly=true)
+    @Transactional(readOnly = true)
     @Override
     public List<Account> getAccounts() {
         return accountDao.findAll();
@@ -29,5 +29,11 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public Account getAccountById(int id) {
         return accountDao.findById(id);
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<Account> getAccountsForUser(int userId) {
+        return accountDao.findByUserId(userId);
     }
 }

@@ -65,9 +65,8 @@ public class Transaction
 
     @Override
     public String toString() {
-        return "Article{" +
+        return "Transaction{" +
                 "id=" + id +
-                ", account='" + account + '\'' +
                 ", libelle='" + libelle + '\'' +
                 ", amount='" + amount + '\'' +
                 '}';

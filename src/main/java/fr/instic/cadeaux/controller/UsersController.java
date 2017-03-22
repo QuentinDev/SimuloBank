@@ -70,7 +70,7 @@ public class UsersController {
         User user = us.verrifierUtilisateur(email, password);
         ModelAndView mav = new ModelAndView();
         if (user != null) {
-            hs.setAttribute("id", user.getId());
+            hs.setAttribute("userId", user.getId());
             mav.setViewName("connexionPost");
             mav.getModel().put("user", user);
             return mav;

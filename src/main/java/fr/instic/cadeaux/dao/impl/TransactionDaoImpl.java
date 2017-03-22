@@ -34,7 +34,7 @@ public class TransactionDaoImpl implements TransactionDao {
 
     @Override
     public Transaction findByAccountIdAndDate(int accountId, Date date) {
-        return (Transaction) sf.getCurrentSession().createQuery("from Transaction where date = :date and accountId < :accountId")
+        return (Transaction) sf.getCurrentSession().createQuery("from Transaction where accountId = :accountId and date >= :date")
                 .setParameter("date", date)
                 .setParameter("accountId", accountId)
                 .getResultList();
