@@ -1,0 +1,108 @@
+<style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {
+	height: 1500px;
+	
+	}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+		width:calc(25% - 50px);
+		background-color: white;
+		height: 100%;
+		display: inline-block;
+		padding: 20px;
+		margin: 5px;
+		line-height: 22px;
+		border-radius: 6px;
+    }
+	.sidenav label,sidenav a{
+		display:block;
+	}
+    .shadow{
+		box-shadow:0px 0px 6px grey;
+	}
+	#accountList{
+		background-color: white;
+		float: right;
+		margin: 5px;
+		border-radius: 6px;
+		width: calc(75% - 10px);
+	}
+	#accountList #title,#accountList div.compte{
+		display:block;
+		width:100%;
+		height:40px;
+		text-align:center;
+	}
+    #accountList div.compte
+	{
+		margin-top: 15px;
+	}
+	#accountList div.compte:first-child
+	{
+		margin-top: 0px;
+	}
+    #accountList div.transactions
+    {
+		display:none;
+		width:100%;
+		text-align:center;
+    }
+	#accountList div.transactions table{
+		width:100%;
+	}
+	#accountList div label{
+		display:block;
+		float:left;
+		margin:0;
+		width:calc(100% / 7);
+	}
+
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #5886D3;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+	.col-sm-9
+	{
+	background-color: white;
+      color: #5886D3;
+      padding: 15px;
+	  border-bottom: 6px solid #5886D3;
+	  border-radius: 5px ;
+	
+	}
+	h2{
+	   background-color: #44B958;
+	   color: white;
+	   border-bottom: 6px solid #5886D3;
+	   border-radius: 5px;
+	   text-align: center;
+	}
+	.container-fluid
+	{
+	border-bottom: 6px solid #5886D3;
+	  border-radius: 5px;
+	}
+	.nav nav-pills nav-stacked
+	{
+	border-bottom: 6px solid #5886D3;
+	  border-radius: 5px;
+	}
+	.button {
+		color: #419438;
+		text-align: center;
+	}
+</style>
