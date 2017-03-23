@@ -8,18 +8,30 @@ import java.util.Date;
 public class MontantDate
 {
     private Date date;
+
+
+
     private float montant;
+
+    public float getMontant() {
+        return montant;
+    }
+
+    public void setMontant(float montant) {
+        this.montant = montant;
+    }
+
 
     public Date getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-    public MontantDate(Date date,float montant)
+
+
+
+    public MontantDate(long date,float montant)
     {
-     this.date=date;
+     this.date=new Date(date);
      this.montant=montant;
     }
 
