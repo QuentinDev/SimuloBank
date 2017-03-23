@@ -1,6 +1,9 @@
 package fr.instic.cadeaux.business;
 
 import javax.persistence.*;
+import java.sql.Time;
+import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -24,6 +27,9 @@ public class Account {
     private float balance;
 
     private int rate;
+   @Transient
+    private List<MontantDate> montantDateList=new ArrayList<>();
+
 
     @ManyToOne
     private AccountType accountType;
@@ -117,19 +123,40 @@ public class Account {
     public List<MontantDate> calculBudget(Date date)
     {   float balancetemp=this.balance;
         Date now=new Date();
-        List<MontantDate> montantDateList = null;
 
+
+
+
+        System.out.println(now.compareTo(date));
+        int i=0;
         while (now.compareTo(date) == -1){
-            int i=0;
+
+            System.out.println("jour"+i);
+            i++;
             for (Transaction transaction: this.transactions )
             {
-                balancetemp=balancetemp+transaction.montantDate(now);
-                
-            }
 
-          montantDateList.add(new MontantDate(now,balancetemp));
+                balancetemp+=transaction.montantDate(now);
+
+            }
             now.setDate(now.getDate()+1);
+
+            long LD;
+            LD= now.getTime();
+            MontantDate md=new MontantDate(LD,balancetemp);
+            System.out.println("date :"+md.getDate()+"montant : "+md.getMontant());
+            montantDateList.add(md);
+            System.out.println("date :"+montantDateList.get(montantDateList.size()-1).getDate()+"montant : "+montantDateList.get(montantDateList.size()-1).getMontant());
+
         }
+        System.out.println("entre while et foeach date :"+montantDateList.get(758).getDate()+"montant : "+montantDateList.get(758).getMontant());
+        for (MontantDate mt:montantDateList)
+
+        {
+            System.out.println("date :"+mt.getDate()+"montant : "+mt.getMontant());
+        }
+
+        System.out.println(now.compareTo(date) == -1);
 
         return montantDateList;
 

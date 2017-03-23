@@ -1,8 +1,11 @@
 package fr.instic.cadeaux.business;
 
 import javax.persistence.*;
+
+
+import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.time.LocalDate;
+
 
 @Entity
 public class Transaction
@@ -74,25 +77,31 @@ public class Transaction
 
 
     public float montantDate(Date date)  {
-        LocalDate  a = LocalDate.of(this.date.getYear(), this.date.getMonth(), this.date.getDay());
-        LocalDate  b = LocalDate.of(date.getYear() , date.getMonth(), date.getDay());
+
+        Date a=this.date;
+        Date b=date;
+        SimpleDateFormat formater = new SimpleDateFormat("dd");
+
         switch (this.transactionType.getId())
         {
             case 1:
-                if(a==b)
-                    return amount; // transaction unique
-
+                if(a.getMonth()==b.getMonth()&&a.getYear()==b.getYear()&& formater.format(b).equals(formater.format(a)))
+                {
+                    return this.amount+10; }//transaction unique
                 break;
             case 2:
-                if(a.getDayOfMonth()==b.getDayOfMonth())
-                    return amount; // transaction mensuelle
-
+                if(formater.format(b).equals(formater.format(a)))
+                {
+                    return this.amount+10; }// transaction mensuelle
                 break;
             case 3:
-                if(a.getDayOfMonth()==b.getDayOfMonth()&& a.getMonthValue()==b.getMonthValue())
-                    return amount; // transaction annuelle;
+                if(a.getMonth()==b.getMonth()&& formater.format(b).equals(formater.format(a)))
+                {
+                    return this.amount+10; // transaction annuelle;
+                }
                 break;
             default:
+
                 return 0;
         }
         return 0;
