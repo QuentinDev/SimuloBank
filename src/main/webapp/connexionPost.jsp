@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,9 +28,12 @@
 	 <label id="title">Comptes</label>
 		<c:forEach var="account" items="${user.accounts}">
 			<div class="compte" id="${account.id}">
+				<c:set var="string1" value="${account.creationDate}"/>
+				<c:set var="string2" value="${fn:split(string1, ' ')}" />
+				<c:set var="date_creation" value="${fn:split(string2[0], '-')}" />
 				<label>${account.id}</label>
 				<label>${account.name}</label>
-				<label>${account.creationDate}</label>
+				<label>${date_creation[2]}/${date_creation[1]}/${date_creation[0]}</label>
 				<label>${account.accountType.name}</label>
 				<label>${account.balance}</label>
 				<form method="POST" action="/"><label><input type="text" class="date" name="final_date" size="8"><input type="hidden"name="idAccount" value="${account.id}"></label><label><input type="submit" value="Simulation"></label></form></label>
@@ -37,9 +41,13 @@
 			<div class="transactions" id="account_${account.id}">
 				<table>
 			<c:forEach var="transaction" items="${account.transactions}">
+				<c:set var="string1" value="${transaction.date}"/>
+				<c:set var="string2" value="${fn:split(string1, ' ')}" />
+				<c:set var="date" value="${fn:split(string2[0], '-')}" />
 				<tr>
 					<td>${transaction.id}</td>
-					<td>${transaction.date}</td>
+					<td>${date[2]}/${date[1]}/${date[0]}</td>
+
 					<td>${transaction.libelle}</td>
 					<%--<td>${transaction.transactionType.name}</td>--%>
 					<td>${transaction.amount}</td>
