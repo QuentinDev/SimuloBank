@@ -1,6 +1,8 @@
 package fr.instic.cadeaux.controller;
 
+import fr.instic.cadeaux.business.Account;
 import fr.instic.cadeaux.business.City;
+import fr.instic.cadeaux.business.MontantDate;
 import fr.instic.cadeaux.business.User;
 import fr.instic.cadeaux.service.CityService;
 import fr.instic.cadeaux.service.UtilisateurService;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -69,14 +72,25 @@ public class UsersController {
 
         User user = us.verrifierUtilisateur(email, password);
         ModelAndView mav = new ModelAndView();
-        if (user != null) {
+       /* if (user != null) {
             hs.setAttribute("userId", user.getId());
             mav.setViewName("connexionPost");
             mav.getModel().put("user", user);
             return mav;
         } else {
             return new ModelAndView("redirect:connexion");
-        }
+        }*/
+        Date d= new Date(117,8,11);
+        List<MontantDate> MontantDateTab;
+        Account ac1;
+        ac1=user.getAccounts().get(0);
+        System.out.println("le compte contient"+ac1.getBalance());
+        MontantDateTab=ac1.calculBudget(d);
+        mav.setViewName("simulation");
+        mav.getModel().put("montantDateTab", MontantDateTab);
+        mav.getModel().put("account", ac1);
+        mav.getModel().put("user", user);
+        return mav;
     }
 
     @RequestMapping(value = "/passwordReset", method = RequestMethod.GET)
