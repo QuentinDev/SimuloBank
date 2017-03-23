@@ -72,18 +72,16 @@ public class UsersController {
 
         User user = us.verrifierUtilisateur(email, password);
         ModelAndView mav = new ModelAndView();
-        if (user != null) {
-            hs.setAttribute("user", user);
-        }
-       /* if (user != null) {
-            hs.setAttribute("userId", user.getId());
-            mav.setViewName("connexionPost");
-            mav.getModel().put("user", user);
-            return mav;
+       if (user != null) {
+           hs.setAttribute("user", user);
+           hs.setAttribute("userId", user.getId());
+           mav.setViewName("connexionPost");
+           mav.getModel().put("user", user);
+           return mav;
         } else {
             return new ModelAndView("redirect:connexion");
-        }*/
-        Date d= new Date(117,8,11);
+        }
+        /*Date d= new Date(117,8,11);
         List<MontantDate> MontantDateTab;
         Account ac1;
         ac1=user.getAccounts().get(0);
@@ -93,7 +91,7 @@ public class UsersController {
         mav.getModel().put("montantDateTab", MontantDateTab);
         mav.getModel().put("account", ac1);
         mav.getModel().put("user", user);
-        return mav;
+        return mav;*/
     }
 
     @RequestMapping(value = "/passwordReset", method = RequestMethod.GET)
