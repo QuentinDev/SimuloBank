@@ -46,4 +46,9 @@ public class AccountDaoImpl implements AccountDao {
         return account;
     }
 
+    @Override
+    public AccountType getAccountTypeById(int accountTypeId) {
+        return sf.getCurrentSession().byId(AccountType.class).load(accountTypeId);
+    }
+
 }

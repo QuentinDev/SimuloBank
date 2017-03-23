@@ -16,5 +16,6 @@ public interface TransactionDao {
     Transaction findByAccountIdAndDate(int accountId, Date date);
     List<TransactionType> getTransactionTypes();
     Transaction addTransaction(Transaction transaction);
+    TransactionType getTransactionTypeById(int TransactionTypeId);
 
 }

@@ -31,11 +31,16 @@ public class Account {
 
     private Date creationDate;
 
-    public Account(User user, int balance, String name, int accountType) {
+    public Account() {
+        super();
+    }
+
+    public Account(User user, int balance, String name, AccountType accountType, Date creationDate) {
         this.user = user;
         this.balance = balance;
         this.name = name;
         this.accountType = accountType;
+        this.creationDate = creationDate;
     }
 
     public int getId() {

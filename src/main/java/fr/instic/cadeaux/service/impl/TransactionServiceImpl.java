@@ -50,6 +50,12 @@ public class TransactionServiceImpl implements TransactionService {
         return transactionDao.getTransactionTypes();
     }
 
+    @Transactional(readOnly = true)
+    @Override
+    public TransactionType getTransactionTypeById(int transactionTypeId) {
+        return transactionDao.getTransactionTypeById(transactionTypeId);
+    }
+
     @Transactional
     @Override
     public Transaction addTransaction(Transaction transaction) {

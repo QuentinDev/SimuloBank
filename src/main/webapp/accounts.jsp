@@ -24,12 +24,12 @@
     <p>Rajouter une transaction :</p>
     <form action="/createTransaction" method="post">
         <div>
-            <input type="hidden" id="account_id" name="account_id" value="${account.id}">
+            <input type="hidden" id="ACCOUNT_ID" name="ACCOUNT_ID" value="${account.id}">
         </div>
 
         <div>
-            <label for="NOM">Nom de la transaction</label>
-            <input required type="text" id="NOM" name="NOM">
+            <label for="NAME">Nom de la transaction</label>
+            <input required type="text" id="NAME" name="NAME">
         </div>
 
         <div>
@@ -42,8 +42,8 @@
             <input required type="date" id="DATE" name="DATE">
         </div>
 
-        <label for="TRANSACTIONTYPES">Type de la transaction</label>
-        <select name="TRANSACTIONTYPES">
+        <label for="TRANSACTIONTYPE">Type de la transaction</label>
+        <select name="TRANSACTIONTYPE">
             <c:forEach var="type" items="${transactionTypes}">
                 <option id="${type.name}" value="${type.id}">${type.name}</option>
                 <label for="${type.name}">${type.name}</label>
@@ -51,7 +51,7 @@
         </select>
 
         <div id="submit">
-            <input Type="submit" value="S'inscrire">
+            <input Type="submit" value="Ajouter la transaction">
         </div>
     </form>
     <hr>
@@ -82,7 +82,7 @@
     </select>
 
     <div id="submit">
-        <input Type="submit" value="S'inscrire">
+        <input Type="submit" value="Ajouter le compte">
     </div>
 </form>
 

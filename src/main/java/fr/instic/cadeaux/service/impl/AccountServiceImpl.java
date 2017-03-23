@@ -50,4 +50,10 @@ public class AccountServiceImpl implements AccountService {
         return accountDao.addAccount(account);
     }
 
+    @Transactional
+    @Override
+    public AccountType getAccountTypeById(int accountTypeId) {
+        return accountDao.getAccountTypeById(accountTypeId);
+    }
+
 }

@@ -1,9 +1,6 @@
 package fr.instic.cadeaux.controller;
 
-import fr.instic.cadeaux.business.Account;
-import fr.instic.cadeaux.business.AccountType;
-import fr.instic.cadeaux.business.City;
-import fr.instic.cadeaux.business.User;
+import fr.instic.cadeaux.business.*;
 import fr.instic.cadeaux.service.AccountService;
 import fr.instic.cadeaux.service.TransactionService;
 import fr.instic.cadeaux.service.UtilisateurService;
@@ -16,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by Quentin on 21/03/2017.
@@ -58,13 +58,46 @@ public class AccountController {
             @RequestParam(name = "NAME") String name,
             @RequestParam(name = "ACCOUNTTYPE") int accountTypeId
     ) {
-        System.out.println("Lancement inscriptionPost");
-        User user = us.getUserById(userId);
+        System.out.println("Lancement createAccount");
+        User user = (User) hs.getAttribute("user");
         AccountType accountType = as.getAccountTypeById(accountTypeId);
 
-        Account account = as.addAccount(new Account(user, balance, name, accountType));
+        as.addAccount(new Account(user, balance, name, accountType, new Date()));
 
-        return mav;
+        hs.setAttribute("user", us.recupereUserById(user.getId()));
+
+        return new ModelAndView("redirect:accounts");
+    }
+
+    @RequestMapping(value = "/createTransaction", method = RequestMethod.POST)
+    public ModelAndView createAccount (
+            @RequestParam(name = "ACCOUNT_ID") int accountId,
+            @RequestParam(name = "AMOUNT") int amount,
+            @RequestParam(name = "NAME") String name,
+            @RequestParam(name = "DATE") String dateStr,
+            @RequestParam(name = "TRANSACTIONTYPE") int transactionTypeId
+    ) {
+        System.out.println("Lancement createAccount");
+
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Date dateParsed = null;
+        try {
+            dateParsed = format.parse(dateStr);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        User user = (User) hs.getAttribute("user");
+
+        Account account = as.getAccountById(accountId);
+
+        TransactionType transactionType = ts.getTransactionTypeById(transactionTypeId);
+
+        ts.addTransaction(new Transaction(account, name, dateParsed, amount, transactionType));
+
+        hs.setAttribute("user", us.recupereUserById(user.getId()));
+
+        return new ModelAndView("redirect:accounts");
     }
 
 }

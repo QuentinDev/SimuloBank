@@ -20,5 +20,7 @@ public interface TransactionService {
 
     List<TransactionType> getTransactionTypes();
 
+    TransactionType getTransactionTypeById(int transactionTypeId);
+
     Transaction addTransaction(Transaction transaction);
 }

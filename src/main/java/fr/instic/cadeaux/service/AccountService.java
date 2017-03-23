@@ -18,4 +18,6 @@ public interface AccountService {
     List<AccountType> getAccountTypes();
 
     Account addAccount(Account account);
+
+    AccountType getAccountTypeById(int accountTypeId);
 }

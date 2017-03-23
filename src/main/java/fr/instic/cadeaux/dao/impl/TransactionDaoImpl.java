@@ -1,5 +1,6 @@
 package fr.instic.cadeaux.dao.impl;
 
+import fr.instic.cadeaux.business.AccountType;
 import fr.instic.cadeaux.business.Transaction;
 import fr.instic.cadeaux.business.TransactionType;
 import fr.instic.cadeaux.dao.TransactionDao;
@@ -50,5 +51,10 @@ public class TransactionDaoImpl implements TransactionDao {
     public Transaction addTransaction(Transaction transaction) {
         sf.getCurrentSession().save(transaction);
         return transaction;
+    }
+
+    @Override
+    public TransactionType getTransactionTypeById(int TransactionTypeId) {
+        return sf.getCurrentSession().byId(TransactionType.class).load(TransactionTypeId);
     }
 }

@@ -14,4 +14,5 @@ public interface AccountDao {
     List<Account> findByUserId(int userId);
     List<AccountType> getAccountTypes();
     Account addAccount(Account account);
+    AccountType getAccountTypeById(int accountTypeId);
 }
