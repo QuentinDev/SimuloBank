@@ -58,6 +58,7 @@
                     <tr>
                         <td>${transaction.id}</td>
                         <td>${date[2]}/${date[1]}/${date[0]}</td>
+                        <td>${transaction.transactionType.name}</td>
 
                         <td>${transaction.libelle}</td>
                             <%--<td>${transaction.transactionType.name}</td>--%>
