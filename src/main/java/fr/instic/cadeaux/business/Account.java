@@ -130,7 +130,10 @@ public class Account {
         System.out.println(now.compareTo(date));
         int i=0;
         while (now.compareTo(date) == -1){
-
+            if(now.getDate() == this.creationDate.getDate() && now.getMonth() == this.creationDate.getMonth())
+            {
+                balancetemp = balancetemp*(1+((float)this.rate /100));
+            }
             System.out.println("jour"+i);
             i++;
             for (Transaction transaction: this.transactions )
