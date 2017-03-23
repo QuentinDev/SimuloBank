@@ -68,7 +68,13 @@
         ["${mtD.date}",${mtD.montant}]
         </c:forEach>
     ] ),{legendIsVisible : false} ) );
-
+    chart.addSeries( new EJSC.AlarmSeries( 0 , {
+        color: '#cc6666',
+        fill: 'down' ,
+        fillTo: -500000 ,
+        opacity: 20,
+        flag: { visible: true }
+    } ) );
 
 </script>
 <style>
@@ -76,6 +82,7 @@
     {
         width:70%;
         height:70%;
+        margin:auto;
     }
 </style>
 </html>
