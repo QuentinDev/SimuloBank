@@ -1,6 +1,7 @@
 package fr.instic.cadeaux.service;
 
 import fr.instic.cadeaux.business.Account;
+import fr.instic.cadeaux.business.AccountType;
 
 import java.util.List;
 
@@ -14,4 +15,9 @@ public interface AccountService {
 
     List<Account> getAccountsForUser(int userId);
 
+    List<AccountType> getAccountTypes();
+
+    Account addAccount(Account account);
+
+    AccountType getAccountTypeById(int accountTypeId);
 }

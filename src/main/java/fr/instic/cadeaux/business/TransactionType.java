@@ -8,6 +8,7 @@ import javax.persistence.Id;
 /**
  * Created by Quentin on 21/03/2017.
  */
+
 @Entity
 public class TransactionType {
     @Id

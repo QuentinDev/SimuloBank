@@ -26,6 +26,19 @@ public class Transaction
     @ManyToOne
     private TransactionType transactionType;
 
+    public Transaction() {
+        super();
+    }
+
+    public Transaction(Account account, String libelle, Date date, int amount, TransactionType transactionType) {
+        this.account = account;
+        this.libelle = libelle;
+        this.date = date;
+        this.amount = amount;
+        this.transactionType = transactionType;
+    }
+
+
     public int getId() {
         return id;
     }
@@ -66,12 +79,22 @@ public class Transaction
         this.amount = amount;
     }
 
+    public TransactionType getTransactionType() {
+        return transactionType;
+    }
+
+    public void setTransactionType(TransactionType transactionType) {
+        this.transactionType = transactionType;
+    }
+
     @Override
     public String toString() {
         return "Transaction{" +
                 "id=" + id +
                 ", libelle='" + libelle + '\'' +
                 ", amount='" + amount + '\'' +
+                ", transactionType='" + transactionType + '\'' +
+                ", date='" + date + '\'' +
                 '}';
     }
 

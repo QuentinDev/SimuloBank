@@ -1,6 +1,7 @@
 package fr.instic.cadeaux.service.impl;
 
 import fr.instic.cadeaux.business.Transaction;
+import fr.instic.cadeaux.business.TransactionType;
 import fr.instic.cadeaux.dao.TransactionDao;
 import fr.instic.cadeaux.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +42,23 @@ public class TransactionServiceImpl implements TransactionService {
     @Override
     public Transaction getTransactionByAccountIdAndByDate(int accountId, Date date) {
         return transactionDao.findByAccountIdAndDate(accountId, date);
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<TransactionType> getTransactionTypes() {
+        return transactionDao.getTransactionTypes();
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public TransactionType getTransactionTypeById(int transactionTypeId) {
+        return transactionDao.getTransactionTypeById(transactionTypeId);
+    }
+
+    @Transactional
+    @Override
+    public Transaction addTransaction(Transaction transaction) {
+        return transactionDao.addTransaction(transaction);
     }
 }

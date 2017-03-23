@@ -36,6 +36,7 @@
 			<label for="MOT_DE_PASSE">Mot de passe</label>
 			<input type="password" id="MOT_DE_PASSE" name="MOT_DE_PASSE">
 		</div>
+		<label for="CITY">Ville</label>
 		<select name="CITY">
 
             <c:forEach var="city" items="${cities}">
