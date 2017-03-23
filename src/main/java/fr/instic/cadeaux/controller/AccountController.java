@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Quentin on 21/03/2017.
@@ -105,21 +106,28 @@ public class AccountController {
         return new ModelAndView("redirect:accounts");
     }
 
-	@RequestMapping(value = "/simulation", method = RequestMethod.POST)
+    @RequestMapping(value = "/simulation", method = RequestMethod.POST)
     @Transactional
     public ModelAndView SimulationPost(
             @RequestParam(name = "final_date") Date dateString,
             @RequestParam(name = "idAccount") int idAccount
+    )
+    { System.out.println("SimulationPost ");
+        Account account = as.getAccountById(idAccount);
+        List<MontantDate> MontantDateTab;
 
-    ) {
+        MontantDateTab=account.calculBudget(dateString);
 
-        System.out.println("la date au format String est    "+dateString);
+        System.out.println("budget calculé  ");
 
-        System.out.println(idAccount);
-        ModelAndView mav = new ModelAndView("motDePasse");
+
+        ModelAndView mav = new ModelAndView("simulation");
         int userId = (int) hs.getAttribute("userId");
 
-        mav.getModel().put("accounts", as.getAccountsForUser(userId));
+        mav.getModel().put("account", account);
+        mav.getModel().put("MontantDateTab", MontantDateTab);
+        mav.getModel().put("user", hs.getAttribute("user"));
+
 
         return mav;
     }

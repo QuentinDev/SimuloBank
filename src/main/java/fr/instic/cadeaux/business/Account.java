@@ -162,7 +162,7 @@ public class Account {
             System.out.println("date :"+montantDateList.get(montantDateList.size()-1).getDate()+"montant : "+montantDateList.get(montantDateList.size()-1).getMontant());
 
         }
-        System.out.println("entre while et foeach date :"+montantDateList.get(758).getDate()+"montant : "+montantDateList.get(758).getMontant());
+       // System.out.println("entre while et foeach date :"+montantDateList.get(758).getDate()+"montant : "+montantDateList.get(758).getMontant());
         for (MontantDate mt:montantDateList)
 
         {
