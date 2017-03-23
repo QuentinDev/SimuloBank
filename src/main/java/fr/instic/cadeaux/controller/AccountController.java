@@ -42,9 +42,13 @@ public class AccountController {
 
         User user = (User) hs.getAttribute("user");
 
+        User updatedUser = us.recupereUserById(user.getId());
+        hs.removeAttribute("user");
+        hs.setAttribute("user", updatedUser);
+
         ModelAndView mav = new ModelAndView("accounts");
-        mav.getModel().put("accounts", user.getAccounts());
-        mav.getModel().put("user", user);
+        mav.getModel().put("accounts", as.getAccountsForUser(user.getId()));
+        mav.getModel().put("user", updatedUser);
         mav.getModel().put("accountTypes", as.getAccountTypes());
         mav.getModel().put("transactionTypes", ts.getTransactionTypes());
 
@@ -53,7 +57,6 @@ public class AccountController {
 
     @RequestMapping(value = "/createAccount", method = RequestMethod.POST)
     public ModelAndView createAccount (
-            @RequestParam(name = "USER_ID") int userId,
             @RequestParam(name = "BALANCE") int balance,
             @RequestParam(name = "NAME") String name,
             @RequestParam(name = "ACCOUNTTYPE") int accountTypeId
@@ -64,6 +67,7 @@ public class AccountController {
 
         as.addAccount(new Account(user, balance, name, accountType, new Date()));
 
+        hs.removeAttribute("user");
         hs.setAttribute("user", us.recupereUserById(user.getId()));
 
         return new ModelAndView("redirect:accounts");
@@ -95,6 +99,7 @@ public class AccountController {
 
         ts.addTransaction(new Transaction(account, name, dateParsed, amount, transactionType));
 
+        hs.removeAttribute("user");
         hs.setAttribute("user", us.recupereUserById(user.getId()));
 
         return new ModelAndView("redirect:accounts");

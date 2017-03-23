@@ -34,7 +34,7 @@
 
         <div>
             <label for="AMOUNT">Montant de la transaction</label>
-            <input required type="number" id="AMOUNT" name="AMOUNT">
+            <input required type="number" id="AMOUNT" name="AMOUNT" step="any">
         </div>
 
         <div>
@@ -61,16 +61,13 @@
 <p>Créer un compte :</p>
 <form action="/createAccount" method="post">
     <div>
-        <input type="hidden" id="USER_ID" name="USER_ID" value="${user.id}">
-    </div>
-    <div>
         <label for="NAME">Nom de compte</label>
         <input required type="text" id="NAME" name="NAME">
     </div>
 
     <div>
         <label for="BALANCE">Solde de départ (en €)</label>
-        <input required type="text" id="BALANCE" name="BALANCE">
+        <input required type="number" id="BALANCE" name="BALANCE" step="any">
     </div>
 
     <label for="ACCOUNTTYPE">Type du compte</label>
