@@ -14,26 +14,27 @@
 		<link href="<c:url value="/resources/CSS/global.css" />" rel="stylesheet" />
 	</head>
 <body>
-	<h1>Connexion</h1>
-	<br>
-	<form action="/connexion" method="post">
-		<div>
-			<label for="email">Email</label>
-			<input type="email" id="email" name="email">
-		</div>
+	<div class="connexionContainer">
+		<h1>Connexion</h1>
+		<br>
+		<form action="/connexion" method="post">
+			<div>
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email">
+			</div>
 
-		<div>
-			<label for="password">Mot de passe</label>
-			<input type="password" id="password" name="password">
-		</div>
+			<div>
+				<label for="password">Mot de passe</label>
+				<input type="password" id="password" name="password">
+			</div>
 
-		<div id="submit">
-			<input type="submit" value="Se connecter">
-		</div>
-	</form>
-	<br>
+			<div id="submit">
+				<input type="submit" value="Se connecter">
+			</div>
+		</form>
+		<br>
 
-	<a href="">Inscription</a>
-
+		<a href="">Inscription</a>
+	</div>
 </body>
 </html>

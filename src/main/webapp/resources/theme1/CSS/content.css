@@ -34,11 +34,11 @@
 	#accountList #title,#accountList div.compte{
 		display:block;
 		width:100%;
-		height:40px;
-		text-align:center;
+		height: 42px;
+		text-align: center;
 		font-size: large;
 		font-family: monospace;
-		padding-top: 20px;
+		padding-top: 7px;
 	}
     #accountList div.compte
 	{

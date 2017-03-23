@@ -43,7 +43,6 @@
 					<label>
 					<input type="submit" value="Simulation"></label>
 				</form>
-				</label>
 			</div>
 			<div class="transactions" id="account_${account.id}">
 				<table>
@@ -64,7 +63,6 @@
 				<form method="POST" action="/"><input type="hidden"name="idAccount" value="${account.id}"><input type="submit" value="Ajout transaction"></form>
 			</div>
 		</c:forEach>
-	</table>
 </div>
 
 </body>

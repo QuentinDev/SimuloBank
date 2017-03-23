@@ -75,7 +75,7 @@ public class UsersController {
        if (user != null) {
            hs.setAttribute("user", user);
            hs.setAttribute("userId", user.getId());
-           mav.setViewName("connexionPost");
+           mav.setViewName("redirect:accounts");
            mav.getModel().put("user", user);
            return mav;
         } else {
