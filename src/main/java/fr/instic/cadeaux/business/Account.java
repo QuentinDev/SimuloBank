@@ -1,9 +1,6 @@
 package fr.instic.cadeaux.business;
 
-import javax.jws.soap.SOAPBinding;
 import javax.persistence.*;
-import java.sql.Time;
-import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -162,7 +159,7 @@ public class Account {
             System.out.println("date :"+montantDateList.get(montantDateList.size()-1).getDate()+"montant : "+montantDateList.get(montantDateList.size()-1).getMontant());
 
         }
-       // System.out.println("entre while et foeach date :"+montantDateList.get(758).getDate()+"montant : "+montantDateList.get(758).getMontant());
+
         for (MontantDate mt:montantDateList)
 
         {
