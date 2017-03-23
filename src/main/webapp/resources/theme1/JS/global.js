@@ -10,6 +10,7 @@ $(document).ready(function(){
    $('input.date').datepicker({
        dayNamesMin: ["D", "L", "M", "M", "J", "V", "S"],
        monthNames: [ "Janvier", "Février", "Mars", "Avril", "Mais", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Decembre" ],
-       dateFormat: "dd/mm/yy"
+       dateFormat: "mm/dd/yy"
+
    });
 });

@@ -36,7 +36,7 @@
 				<label>${date_creation[2]}/${date_creation[1]}/${date_creation[0]}</label>
 				<label>${account.accountType.name}</label>
 				<label>${account.balance}</label>
-				<form method="POST" action="/"><label><input type="text" class="date" name="final_date" size="8"><input type="hidden"name="idAccount" value="${account.id}"></label><label><input type="submit" value="Simulation"></label></form></label>
+				<form method="POST" action="/simulation"><label><input type="text" class="date" name="final_date" size="8"><input type="hidden"name="idAccount" value="${account.id}"></label><label><input type="submit" value="Simulation"></label></form></label>
 			</div>
 			<div class="transactions" id="account_${account.id}">
 				<table>
