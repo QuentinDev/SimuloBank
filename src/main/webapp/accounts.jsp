@@ -34,11 +34,11 @@
             <c:set var="string1" value="${account.creationDate}"/>
             <c:set var="string2" value="${fn:split(string1, ' ')}" />
             <c:set var="date_creation" value="${fn:split(string2[0], '-')}" />
-            <label>${account.id}</label>
             <label>${account.name}</label>
             <label>${date_creation[2]}/${date_creation[1]}/${date_creation[0]}</label>
             <label>${account.accountType.name}</label>
             <label>${account.balance}</label>
+            <label>${account.rate}</label>
             <form method="POST" action="/simulation">
                 <label>
                     <input type="text" class="date" name="final_date" size="8">
@@ -137,6 +137,11 @@
         <div class="form-group">
             <label for="BALANCE">Solde de départ (en €)</label>
             <input required type="number" id="BALANCE" name="BALANCE" step="any">
+        </div>
+
+        <div class="form-group">
+            <label for="RATE">Taux</label>
+            <input required type="number" id="RATE" name="RATE" step="any" value="0">
         </div>
 
         <label for="ACCOUNTTYPE">Type du compte</label>

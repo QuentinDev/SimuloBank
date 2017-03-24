@@ -30,7 +30,7 @@ public class Transaction
         super();
     }
 
-    public Transaction(Account account, String libelle, Date date, int amount, TransactionType transactionType) {
+    public Transaction(Account account, String libelle, Date date, float amount, TransactionType transactionType) {
         this.account = account;
         this.libelle = libelle;
         this.date = date;

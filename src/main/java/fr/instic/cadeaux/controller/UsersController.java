@@ -57,7 +57,7 @@ public class UsersController {
         return mav;
     }
 
-    @RequestMapping(value = "/connexion", method = RequestMethod.GET)
+    @RequestMapping(value = { "/connexion", "/" }, method = RequestMethod.GET)
     public ModelAndView connexionGet() {
         System.out.println("Lancement connexionGet");
 

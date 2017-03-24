@@ -58,15 +58,20 @@ public class AccountController {
 
     @RequestMapping(value = "/createAccount", method = RequestMethod.POST)
     public ModelAndView createAccount (
-            @RequestParam(name = "BALANCE") int balance,
+            @RequestParam(name = "BALANCE") float balance,
             @RequestParam(name = "NAME") String name,
-            @RequestParam(name = "ACCOUNTTYPE") int accountTypeId
+            @RequestParam(name = "ACCOUNTTYPE") int accountTypeId,
+            @RequestParam(name = "RATE") float rate
     ) {
         System.out.println("Lancement createAccount");
         User user = (User) hs.getAttribute("user");
         AccountType accountType = as.getAccountTypeById(accountTypeId);
 
-        as.addAccount(new Account(user, balance, name, accountType, new Date()));
+        if(accountTypeId == 1) {
+            rate = 0;
+        }
+
+        as.addAccount(new Account(user, balance, rate, name, accountType, new Date()));
 
         hs.removeAttribute("user");
         hs.setAttribute("user", us.recupereUserById(user.getId()));
@@ -77,7 +82,7 @@ public class AccountController {
     @RequestMapping(value = "/createTransaction", method = RequestMethod.POST)
     public ModelAndView createAccount (
             @RequestParam(name = "ACCOUNT_ID") int accountId,
-            @RequestParam(name = "AMOUNT") int amount,
+            @RequestParam(name = "AMOUNT") float amount,
             @RequestParam(name = "NAME") String name,
             @RequestParam(name = "DATE") String dateStr,
             @RequestParam(name = "TRANSACTIONTYPE") int transactionTypeId

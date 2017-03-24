@@ -24,7 +24,7 @@ public class Account {
 
     private float balance;
 
-    private int rate;
+    private float rate;
    @Transient
     private List<MontantDate> montantDateList=new ArrayList<>();
 
@@ -38,9 +38,10 @@ public class Account {
         super();
     }
 
-    public Account(User user, int balance, String name, AccountType accountType, Date creationDate) {
+    public Account(User user, float balance, float rate, String name, AccountType accountType, Date creationDate) {
         this.user = user;
         this.balance = balance;
+        this.rate = rate;
         this.name = name;
         this.accountType = accountType;
         this.creationDate = creationDate;
@@ -110,7 +111,7 @@ public class Account {
         this.transactions = transactions;
     }
 
-    public int getRate() {
+    public float getRate() {
         return rate;
     }
 

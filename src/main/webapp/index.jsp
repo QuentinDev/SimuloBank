@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="refresh" content="0; url=<c:url value="/connexion.jsp" />" />
 		<title></title>
 	</head>
 	<body>
