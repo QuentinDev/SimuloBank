@@ -114,9 +114,9 @@ public class AccountController {
     )
     { System.out.println("SimulationPost ");
         Account account = as.getAccountById(idAccount);
-        List<MontantDate> MontantDateTab;
+        List<MontantDate> montantDateTab;
 
-        MontantDateTab=account.calculBudget(dateString);
+        montantDateTab=account.calculBudget(dateString);
 
         System.out.println("budget calculé  ");
 
@@ -125,7 +125,7 @@ public class AccountController {
         int userId = (int) hs.getAttribute("userId");
 
         mav.getModel().put("account", account);
-        mav.getModel().put("MontantDateTab", MontantDateTab);
+        mav.getModel().put("montantDateTab", montantDateTab);
         mav.getModel().put("user", hs.getAttribute("user"));
 
 
